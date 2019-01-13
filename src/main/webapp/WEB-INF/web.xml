@@ -10,7 +10,7 @@
     </listener>
     <context-param>
         <param-name>org.scalatra.cors.allowedOrigins</param-name>
-        <param-value>http://localhost:5000,http://localhost:3000</param-value>
+        <param-value>*</param-value>
     </context-param>
     <context-param>
         <param-name>org.scalatra.cors.allowCredentials</param-name>
