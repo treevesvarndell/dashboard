@@ -1,7 +1,6 @@
 package com.example.app
 
-import com.typesafe.config
-import com.typesafe.config.{ConfigFactory, ConfigValue}
+import com.typesafe.config.ConfigFactory
 import org.json4s.{DefaultFormats, Formats}
 import org.scalatra.json._
 import org.scalatra.{CorsSupport, ScalatraServlet}
