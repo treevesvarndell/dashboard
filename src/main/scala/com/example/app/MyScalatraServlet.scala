@@ -1,7 +1,6 @@
 package com.example.app
 
-import com.typesafe.config
-import com.typesafe.config.{ConfigFactory, ConfigValue}
+import com.typesafe.config.ConfigFactory
 import org.json4s.{DefaultFormats, Formats}
 import org.scalatra.json._
 import org.scalatra.{CorsSupport, ScalatraServlet}
@@ -20,10 +19,10 @@ class MyScalatraServlet extends ScalatraServlet with JacksonJsonSupport with Cor
   }
 
   get("/departures") {
-    Http(s"https://huxley.apphb.com/departures/GER/100?accessToken=${accessToken}").asString.body
+    Http(s"https://huxley.apphb.com/departures/GER/200?accessToken=$accessToken").asString.body
   }
 
   get("/arrivals") {
-    Http(s"https://huxley.apphb.com/arrivals/MYB/100?accessToken=${accessToken}").asString.body
+    Http(s"https://huxley.apphb.com/arrivals/MYB/200?accessToken=$accessToken").asString.body
   }
 }

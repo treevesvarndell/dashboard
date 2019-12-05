@@ -6,7 +6,7 @@ name := "Dashboard Server"
 
 version := "0.1.0-SNAPSHOT"
 
-scalaVersion := "2.12.6"
+scalaVersion := "2.12.10"
 
 mainClass := Some("com.example.JettyLauncher")
 
