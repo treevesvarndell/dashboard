@@ -19,10 +19,12 @@ class MyScalatraServlet extends ScalatraServlet with JacksonJsonSupport with Cor
   }
 
   get("/departures") {
-    Http(s"https://huxley.apphb.com/departures/GER/200?accessToken=$accessToken").asString.body
+    Http(s"https://huxley.apphb.com/departures/GER/100?accessToken=$accessToken").asString.body
   }
 
-  get("/arrivals") {
-    Http(s"https://huxley.apphb.com/arrivals/MYB/200?accessToken=$accessToken").asString.body
+  get("/service/:id") {
+    val id: String = params("id")
+    val url = s"https://huxley.apphb.com/service/$id?accessToken=$accessToken"
+    Http(url).asString.body
   }
 }
