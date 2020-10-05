@@ -451,8 +451,9 @@ class MyScalatraServlet extends ScalatraServlet with JacksonJsonSupport with Cor
     }
   }
 
-  get("/departures") {
-    val url = s"https://huxley.apphb.com/departures/GER/100?accessToken=$accessToken"
+  get("/departures/:station") {
+    val id: String = params("station")
+    val url = s"https://huxley.apphb.com/departures/$id/200?accessToken=$accessToken"
     LOG.info(s"Hit: '$url'")
     val response = Http(url).asString.body
     LOG.debug(response)
@@ -464,7 +465,7 @@ class MyScalatraServlet extends ScalatraServlet with JacksonJsonSupport with Cor
     val url = s"https://huxley.apphb.com/service/$id?accessToken=$accessToken"
     LOG.info(s"Hit: '$url'")
     val response = Http(url).asString.body
-    LOG.debug(response)
+    LOG.info(response)
     response
   }
 }
